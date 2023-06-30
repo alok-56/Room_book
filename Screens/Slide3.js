@@ -1,95 +1,86 @@
 import React from "react";
 import { View, Text, ImageBackground, Image, TouchableOpacity } from "react-native";
-
-const Slide3 = ({navigation}) => {
+import Icon from 'react-native-vector-icons/MaterialIcons'
+const Slide3 = ({ navigation }) => {
     return (
         <View style={{
-            flex: 1
+            flex: 1,
+            backgroundColor: "#fff"
         }}>
-            <ImageBackground style={{
-                height: "100%",
-                weight: "100%",
-
-            }} source={require('../assets/bac1.png')}>
-                <View style={{
-                    flex: 1,
-                    marginTop: "2%"
+            <View style={{
+                alignSelf: "center",
+            }}>
+                <Image style={{
+                    height: 300,
+                    width: 300,
+                    alignSelf: "center"
+                }} source={require('../assets/slide3.gif')}></Image>
+            </View>
+            <View style={{
+                alignSelf: "center",
+                marginTop: 25,
+                flexDirection: "row",
+            }}>
+                <Text style={{
+                    width: 10,
+                    height: 10,
+                    backgroundColor: "black",
+                    borderRadius: 10
+                }}></Text>
+                <Text style={{
+                    width: 10,
+                    height: 10,
+                    backgroundColor: "rgba(248, 89, 53, 1)",
+                    borderRadius: 10,
+                    marginLeft: 7
+                }}></Text>
+                <Text style={{
+                    width: 10,
+                    height: 10,
+                    backgroundColor: "black",
+                    borderRadius: 10,
+                    marginLeft: 7
+                }}></Text>
+            </View>
+            <View style={{
+                marginTop: 45,
+            }}>
+                <Text style={{
+                    textAlign: "center",
+                    fontSize: 20,
+                    fontWeight: "bold"
+                }}>
+                    Schedule Your Appointment
+                </Text>
+                <Text style={{
+                    textAlign: "center",
+                    marginTop: 10,
+                    fontSize: 15,
+                    width: "90%",
+                    alignSelf: "center"
 
                 }}>
-                    <Image style={{
-                        height: 100,
-                        width: 200,
-                        marginLeft: 5,
-                        marginTop: 35
-                    }} source={require('../assets/slide3.png')}></Image>
-                    <Image style={{
-                        marginLeft: "40%"
-                    }} source={require('../assets/slidea.png')}></Image>
-                    <Image
-                        style={{
-                            marginLeft: "55%",
-                            position: "relative",
-                            bottom: "50%",
-                            width: 200,
-                            height: 160
-                        }} source={require('../assets/slide3h.png')}></Image>
-                </View>
+                    Get Away With The Stress Of Unavailibility Of Doctors Or Hospitals Nearby. Enter The Symotoms You're Facing And The Get The Most Probable Disease You Might Be Suffering From. With More Than 80% Accuracy.</Text>
                 <View style={{
-                    flex: 1,
-                    flexDirection: "column",
-                    width: "60%",
-                    marginLeft: "40%",
-                    position: "relative",
-                    top: "22%",
-                    right: "1%"
-
+                    marginTop: 40,
+                    alignSelf: "center",
                 }}>
-                    <Text style={{
-                        fontSize: 20,
-                        color: "rgba(12, 0, 88, 1)",
-                        textAlign: "center"
-                    }}>We have different PG
-                        available around your
-                        College which provides
-                        different facility .</Text>
-
+                    <TouchableOpacity style={{
+                        width: 150,
+                        backgroundColor: "black",
+                        borderRadius: 5,
+                        padding: 10
+                    }} onPress={() => navigation.navigate('Login')}>
+                        <Text style={{ color: "#fff", textAlign: "center", fontWeight: "bold" }}>Get Started</Text>
+                    </TouchableOpacity>
                 </View>
 
-                <View style={{
-                    flexDirection: "row",
-                }}>
-                    <Image source={require('../assets/girl.png')}>
-                    </Image>
-                    <View style={{
-                        justifyContent: "flex-end",
-                        marginBottom: "10%",
-                        position: "relative",
-                        right: "17%"
-                    }}>
-                        <TouchableOpacity style={{
-                            width: 110,
-                            backgroundColor: "rgba(0, 38, 57, 0.49)",
-                            padding: 10,
-                            borderRadius: 40,
-                            shadowColor: '#171717',
-                            shadowOffset: { width: -2, height: 4 },
-                            shadowOpacity: 2,
-                            shadowRadius: 3,
-                            elevation: 60
-
-                        }} onPress={()=>navigation.navigate('Login')}><Text style={{
-                            textAlign: "center",
-                            fontWeight: "bold",
-                            color: "#fff",
-                            fontSize: 20
-                        }}onPress={()=>navigation.navigate("Login")}>Next</Text></TouchableOpacity>
-                    </View>
-                </View>
+            </View>
 
 
-            </ImageBackground >
 
-        </View >
+
+        </View>
     )
 }
 

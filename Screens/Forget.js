@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, Text, ImageBackground, TextInput, ActivityIndicator, TouchableOpacity, ToastAndroid, StyleSheet } from "react-native";
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
-const Forget = ({navigation}) => {
+const Forget = ({ navigation }) => {
     const [email, setEmail] = useState('')
     const [load, setLoad] = useState(false)
     const [data, setData] = useState(false)
@@ -82,147 +82,202 @@ const Forget = ({navigation}) => {
         <View style={{
             flex: 1,
         }}>
-            <ImageBackground style={{
-                height: "100%"
-            }} source={require('../assets/bac1.png')}>
-                {
-                    data ? <View style={{ flex: 1, alignItems: "center", marginTop: "15%" }} >
-                        <View >
-                            <Text style={styles.Otptext}>Otp</Text>
-                            <Text style={styles.btn}>91+8340175751</Text>
-                            <View style={styles.input}>
-                                <TextInput onChangeText={(text) => setVeri0(text)} maxLength={1} style={styles.otp}></TextInput>
-                                <TextInput onChangeText={(text) => setVeri1(text)} maxLength={1} style={styles.otp}></TextInput>
-                                <TextInput onChangeText={(text) => setVeri2(text)} maxLength={1} style={styles.otp}></TextInput>
-                                <TextInput onChangeText={(text) => setVeri3(text)} maxLength={1} style={styles.otp}></TextInput>
-                                <TextInput onChangeText={(text) => setVeri4(text)} maxLength={1} style={styles.otp}></TextInput>
-                            </View>
-                        </View>
-                        <View>
-                            <TouchableOpacity style={{
-                                marginTop: 40,
-                                backgroundColor: "rgba(51, 176, 246, 1)",
-                                padding: 10,
-                                width: 300,
-                                borderRadius: 10
-                            }}>
-                                {
-                                    load ? <ActivityIndicator size={'large'} /> : <Text style={{ textAlign: "center", fontSize: 15 }} onPress={() => verify()}>Continue</Text>
-                                }
 
-                            </TouchableOpacity>
-                        </View>
-
+            {
+                data ? <View style={{ flex: 1, marginTop: "10%" }} >
+                    <View style={{
+                        flexDirection: "row"
+                    }}>
+                        <Icon style={{
+                            marginBottom: 10
+                        }} onPress={() => navigation.goBack()} name="arrow-left" size={54} color="black" />
+                        <Text style={{
+                            fontSize: 30,
+                            color: "black",
+                            fontWeight: "bold",
+                            marginTop: 5
+                        }}>OTP Verification</Text>
                     </View>
-                        : passset ? <View style={{
-                            marginTop: "210%"
+                    <View style={{
+                        width: 220,
+                        alignSelf: "center",
+                        marginTop: 30
+                    }}>
+                        <Text style={{
+                            textAlign: "center",
+                            fontSize: 20,
+                            color: "black"
+                        }}>Enter 6 digit OTP sent to your mobile number.</Text>
+                    </View>
+
+                    <View style={{
+                        alignSelf: "center",
+                        marginTop: "10%"
+                    }} >
+                        <View style={styles.input}>
+                            <TextInput onChangeText={(text) => setVeri0(text)} maxLength={1} style={styles.otp}></TextInput>
+                            <TextInput onChangeText={(text) => setVeri1(text)} maxLength={1} style={styles.otp}></TextInput>
+                            <TextInput onChangeText={(text) => setVeri2(text)} maxLength={1} style={styles.otp}></TextInput>
+                            <TextInput onChangeText={(text) => setVeri3(text)} maxLength={1} style={styles.otp}></TextInput>
+                            <TextInput onChangeText={(text) => setVeri4(text)} maxLength={1} style={styles.otp}></TextInput>
+                        </View>
+                    </View>
+                    <View>
+                        <TouchableOpacity style={{
+                            marginTop: 10,
+                            backgroundColor: "rgba(31, 31, 31, 1)",
+                            padding: 10,
+                            width: 300,
+                            marginLeft: 15,
+                            borderRadius: 10,
+                            alignSelf: "center"
                         }}>
+                            {
+                                load ? <ActivityIndicator size={'large'} /> : <Text style={{
+                                    textAlign: "center",
+                                    fontSize: 20,
+                                    fontWeight: "bold",
+                                    color: "#fff"
+                                }} onPress={() => verify()}>Sign in</Text>
+                            }
+
+                        </TouchableOpacity>
+                    </View>
+
+                </View>
+                    : passset ? <View style={{
+                        marginTop: "5%"
+                    }}>
+
+                        <View style={{
+                            flexDirection: "row"
+                        }}>
+
+                            <Icon style={{
+                                marginBottom: 10
+                            }} onPress={() => navigation.goBack()} name="arrow-left" size={54} color="black" />
+                            <Text style={{
+                                fontSize: 25,
+                                color: "black",
+                                fontWeight: "bold",
+                                marginTop: 5
+                            }}> Reset Your Password</Text>
+                        </View>
+
+                        <View style={{
+                            marginTop: 60,
+                            justifyContent: "center",
+                            alignItems: "center",
+
+                        }}>
+                            <TextInput style={{
+                                borderWidth: 1, width: 330,
+                                padding: 8,
+                                borderRadius: 7,
+                                borderColor: "black"
+                            }} placeholder="Enter New password " value={password} onChangeText={(text) => setPassword(text)}></TextInput>
+                            <TextInput style={{
+                                borderWidth: 1, width: 330,
+                                padding: 8,
+                                marginTop: 10,
+                                borderRadius: 7,
+                                borderColor: "black"
+                            }} placeholder="Re-Enter password  " value={compassword} onChangeText={(text) => setCompassword(text)}></TextInput>
+
+
+                            <TouchableOpacity style={{
+                                width: 330,
+                                backgroundColor: "rgba(31, 31, 31, 1)",
+                                padding: 14,
+                                borderRadius: 5,
+                                marginTop: 14,
+
+                            }} onPress={() => changepass()} >
+                                {
+                                    load ? <ActivityIndicator size={"large"} /> : <Text style={{
+                                        fontWeight: "500",
+                                        fontSize: 22,
+                                        textAlign: "center",
+                                        color: "#fff"
+                                    }} >  Continue </Text>
+                                }
+                            </TouchableOpacity>
+
+
+                        </View>
+                    </View> :
+
+                        <View style={{
+                            marginTop: "5%"
+                        }}>
+
                             <View style={{
-                                marginLeft: 40
+                                flexDirection: "row"
                             }}>
-                                 <Icon style={{
+
+                                <Icon style={{
                                     marginBottom: 10
-                                }} name="close" size={24} color="black" /> 
+                                }} onPress={() => navigation.goBack()} name="arrow-left" size={54} color="black" />
                                 <Text style={{
-                                    fontSize: 23
-                                }}>Reset your password </Text>
+                                    fontSize: 30,
+                                    color: "black",
+                                    fontWeight: "bold",
+                                    marginTop: 5
+                                }}> Recovering Your Account</Text>
                             </View>
+
                             <View style={{
-                                marginTop: 20,
+                                marginTop: 50,
+                                width: 320,
+                                alignSelf: "center"
+                            }}>
+                                <Text style={{
+                                    fontSize: 20,
+                                    textAlign: "center",
+                                    color: "black"
+                                }}>
+                                    Enter your Phone Number you used while creating your account
+                                </Text>
+                            </View>
+
+
+                            <View style={{
+                                marginTop: 60,
                                 justifyContent: "center",
                                 alignItems: "center",
 
                             }}>
-                                <TextInput style={{
-                                    borderWidth: 1, width: 330,
-                                    padding: 10,
-                                    borderRadius: 10,
-                                    borderColor: "rgba(51, 176, 246, 1)"
-                                }} placeholder="Enter New password " value={password} onChangeText={(text) => setPassword(text)}></TextInput>
-                                <TextInput style={{
-                                    borderWidth: 1, width: 330,
-                                    padding: 10,
-                                    marginTop: 10,
-                                    borderRadius: 10,
-                                    borderColor: "rgba(51, 176, 246, 1)"
-                                }} placeholder="ReEnter password password " value={compassword} onChangeText={(text) => setCompassword(text)}></TextInput>
 
+                                <TextInput style={{
+                                    borderWidth: 1, width: 330,
+                                    padding: 8,
+                                    borderRadius: 7,
+                                    borderColor: "black",
+                                    fontSize: 15
+                                }} placeholder="Email and Number " value={email} onChangeText={(text) => setEmail(text)}></TextInput>
 
                                 <TouchableOpacity style={{
                                     width: 330,
-                                    backgroundColor: "rgba(51, 176, 246, 1)",
-                                    padding: 14,
+                                    backgroundColor: "rgba(31, 31, 31, 1)",
+                                    padding: 10,
                                     borderRadius: 5,
-                                    marginTop: 14,
+                                    marginTop: 20,
 
-                                }} onPress={() => changepass()} >
+                                }} onPress={() => fun()} >
                                     {
                                         load ? <ActivityIndicator size={"large"} /> : <Text style={{
                                             fontWeight: "500",
                                             fontSize: 20,
-                                            textAlign: "center"
-                                        }} >  Continue </Text>
+                                            textAlign: "center",
+                                            color: "#fff"
+                                        }} >  Get Otp </Text>
                                     }
                                 </TouchableOpacity>
-
-
                             </View>
-                        </View> :
+                        </View>
 
-                            <View style={{
-                                marginTop: "40%"
-                            }}>
+            }
 
-                             <View style={{
-                                    marginLeft: 40
-                                }}>
-
-                                    <Icon style={{
-                                        marginBottom: 10
-                                    }} name="close" size={24} color="black" />
-                                    <Text style={{
-                                        fontSize: 23
-                                    }}>Enter your email </Text>
-                                </View> 
-
-
-                                <View style={{
-                                    marginTop: 20,
-                                    justifyContent: "center",
-                                    alignItems: "center",
-
-                                }}>
-
-
-                                    <TextInput style={{
-                                        borderWidth: 1, width: 330,
-                                        padding: 10,
-                                        borderRadius: 10,
-                                        borderColor: "rgba(51, 176, 246, 1)"
-                                    }} placeholder="Email and Number " value={email} onChangeText={(text) => setEmail(text)}></TextInput>
-
-                                    <TouchableOpacity style={{
-                                        width: 330,
-                                        backgroundColor: "rgba(51, 176, 246, 1)",
-                                        padding: 14,
-                                        borderRadius: 5,
-                                        marginTop: 14,
-
-                                    }} onPress={() => fun()} >
-                                        {
-                                            load ? <ActivityIndicator size={"large"} /> : <Text style={{
-                                                fontWeight: "500",
-                                                fontSize: 20,
-                                                textAlign: "center"
-                                            }} >  Continue </Text>
-                                        }
-                                    </TouchableOpacity>
-                                </View>
-                            </View>
-
-                }
-
-            </ImageBackground>
 
         </View>
     )
@@ -237,12 +292,10 @@ const styles = StyleSheet.create({
         width: 300,
         textAlign: "center",
         borderColor: "rgba(51, 176, 246, 1)",
-        borderRadius: 10
+        borderRadius: 10,
+        alignSelf: "center"
     },
     input: {
-        borderEndWidth: 2,
-        borderLeftWidth: 2,
-        borderBottomWidth: 2,
         padding: 18,
         width: 300,
         textAlign: "center",
@@ -250,14 +303,13 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         flexDirection: "row",
         justifyContent: "center"
-
     },
     otp: {
-        width: 30,
-        borderBottomWidth: 2,
+        width: 50,
+        borderWidth: 1,
         marginLeft: 10,
-        textAlign: "center"
-
+        textAlign: "center",
+        borderRadius: 10,
     },
     Otptext: {
         fontSize: 30,

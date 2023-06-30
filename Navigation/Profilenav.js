@@ -7,6 +7,11 @@ import Payment from "../Screens/Payment";
 import Transition from "../Screens/Transition";
 import Ownerinfo from "../Screens/Ownerinfo";
 import Refund from "../Screens/Refund";
+import Mapcom from "../Screens/Mapcom";
+import Login from "../Screens/Login";
+import Bottomtab from "./Bottomtab";
+import Stackroute from "./Stackroute";
+
 
 
 const Stack = createNativeStackNavigator();
@@ -31,9 +36,13 @@ const Profilenav = () => {
             <Stack.Screen name="owner" component={Ownerinfo} options={{
                 headerShown: false
             }} />
+            <Stack.Screen name="map" component={Mapcom} options={{
+                headerShown: false
+            }} />
             <Stack.Screen name="refund" component={Refund} options={{
                 headerShown: false
             }} />
+
         </Stack.Navigator>
 
     )

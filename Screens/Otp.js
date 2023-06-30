@@ -43,12 +43,9 @@ const Otp = ({ navigation, route }) => {
         <View style={{
             flex: 1,
         }}>
-            <ImageBackground style={{ width: "100%", height: "100%" }} source={require('../assets/bac1.png')}>
-
                 <View style={{ flex: 1, alignItems: "center", marginTop: "30%" }} >
                     <View >
-                        <Text style={styles.Otptext}>Otp</Text>
-                        <Text style={styles.btn}>91+8340175751</Text>
+                        <Text>OTP Verification</Text>
                         <View style={styles.input}>
                             <TextInput onChangeText={(text) => setVeri0(text)} maxLength={1} style={styles.otp}></TextInput>
                             <TextInput onChangeText={(text) => setVeri1(text)} maxLength={1} style={styles.otp}></TextInput>
@@ -78,7 +75,6 @@ const Otp = ({ navigation, route }) => {
 
                 </View>
 
-            </ImageBackground>
 
         </View>
     )

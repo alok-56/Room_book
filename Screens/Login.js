@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import Icon from 'react-native-vector-icons/MaterialIcons'
 // import { AntDesign, MaterialIcons, Entypo } from '@expo/vector-icons';
-import { View, Text, TextInput, ImageBackground, TouchableOpacity } from "react-native";
+import { View, Text, TextInput, Image, ImageBackground, TouchableOpacity, ScrollView } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { ActivityIndicator, ToastAndroid } from "react-native";
+
 
 const Login = ({ navigation }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('')
     const [load, setLoad] = useState(false)
+    console.log(email)
 
     const signin = async () => {
         setLoad(true)
@@ -35,146 +37,103 @@ const Login = ({ navigation }) => {
 
     return (
         <View style={{ flex: 1, }}>
-            <View style={{ flex: 1, height: "100%", width: "100%" }}>
-                <ImageBackground style={{
-                    height: "100%"
-                }} source={require('../assets/bac1.png')}>
+            <ScrollView>
+
+                <View style={{
+                    marginTop: 30,
+                }}>
+                    <Text style={{
+                        textAlign: "center", color: "black", fontSize: 23,
+                        fontWeight: "bold"
+                    }}>Log In to EasyPg</Text>
                     <View style={{
-                        marginTop: 60
+                        alignSelf: "center", width: 70, height: 70, borderRadius: 50,
+                        marginTop: 20
                     }}>
-                        <View style={{
-                            marginLeft: 40
-                        }}>
-                            <Icon style={{
-                                marginBottom: 10
-                            }} name="close" size={24} color="black" />
-                            <Text style={{
-                                fontSize: 23
-                            }}>Log in or sign up to Easy PG </Text>
-                        </View>
-                        <View style={{
-                            marginTop: 20,
-                            justifyContent: "center",
-                            alignItems: "center",
-
-                        }}>
-                            <TextInput style={{
-                                borderWidth: 1, width: 330,
-                                padding: 10,
-                                borderRadius: 10,
-                                borderColor: "rgba(51, 176, 246, 1)"
-                            }} placeholder="Email and Number " value={email} onChangeText={(text) => setEmail(text)}></TextInput>
-                            <TextInput style={{
-                                borderWidth: 1, width: 330,
-                                padding: 10,
-                                borderRadius: 10,
-                                marginTop: 10,
-                                borderColor: "rgba(51, 176, 246, 1)"
-                            }} placeholder="Email Password " value={password} secureTextEntry onChangeText={(text) => setPassword(text)}></TextInput>
-                            {/* <Text style={{
-                                marginTop:10,
-                                fontSize:10,
-                                width:330
-                            }}>We'll call or text you to confirm your number. Standard message and data rates apply.</Text> */}
-                            <TouchableOpacity style={{
-                                width: 330,
-                                backgroundColor: "rgba(226, 62, 87, 1)",
-                                padding: 14,
-                                borderRadius: 5,
-                                marginTop: 14,
-
-                            }} onPress={signin}>
-                                {
-                                    load ? <ActivityIndicator size={"large"} /> : <Text style={{
-                                        fontWeight: "500",
-                                        fontSize: 20,
-                                        textAlign: "center",
-                                        color:"#fff",
-                                        fontWeight:"bold"
-                                    }} >  Continue </Text>
-                                }
-                            </TouchableOpacity>
-                            <Text style={{
-                             marginLeft:"45%",
-                             fontSize:18,
-                             fontWeight:"bold",
-                             color:"black",
-                             marginTop:5
-                            }} onPress={()=>navigation.navigate('Forget')}>Forget password</Text>
-                            <View style={{
-                                width: 330,
-                            }}>
-                                <Text style={{ textAlign: "center", fontSize: 15, marginTop: 1 }}>or</Text>
-                            </View>
-                             <TouchableOpacity style={{
-                                width: 330,
-                                backgroundColor: "rgba(226, 62, 87, 1)",
-                                padding: 14,
-                                borderRadius: 5,
-                                marginTop: 14,
-
-                            }} ><Text style={{
-                                fontWeight: "500",
-                                fontSize: 20,
-                                textAlign: "center",
-                                color:"#fff",
-                                fontWeight:"bold"
-                            }} onPress={() => navigation.navigate('Signup')}>Sign up </Text></TouchableOpacity>
-                            <TouchableOpacity style={{
-                                width: 330,
-                                borderTopWidth: 1,
-                                borderLeftWidth: 1,
-                                borderRightWidth: 1,
-                                borderColor: "rgba(51, 176, 246, 1)",
-                                padding: 14,
-                                borderRadius: 5,
-                                marginTop: 14,
-                                flexDirection: "row"
-                            }}><Icon name="email" size={24} color="rgba(226, 62, 87, 1)" /><Text style={{
-                                fontWeight: "500",
-                                fontSize: 16,
-                                marginLeft: 10
-                            }}>Continue with Email</Text></TouchableOpacity>
-                            <TouchableOpacity style={{
-                                width: 330,
-                                borderTopWidth: 1,
-                                borderLeftWidth: 1,
-                                borderRightWidth: 1,
-                                borderColor: "rgba(51, 176, 246, 1)",
-                                padding: 14,
-                                borderRadius: 5,
-                                marginTop: 14,
-                                flexDirection: "row"
-                            }}><Icon name="facebook" size={24} color="rgba(226, 62, 87, 1)" /><Text style={{
-                                fontWeight: "500",
-                                fontSize: 16,
-                                marginLeft: 10
-                            }}>Continue with Facebook</Text></TouchableOpacity>
-                            <TouchableOpacity style={{
-                                width: 330,
-                                borderTopWidth: 1,
-                                borderLeftWidth: 1,
-                                borderRightWidth: 1,
-                                borderColor: "rgba(51, 176, 246, 1)",
-                                padding: 14,
-                                borderRadius: 5,
-                                marginTop: 14,
-                                flexDirection: "row"
-                            }}><Icon name="facebook" size={24} color="rgba(226, 62, 87, 1)" /><Text style={{
-                                fontWeight: "500",
-                                fontSize: 16,
-                                marginLeft: 10
-                            }}>Continue with Goggle</Text></TouchableOpacity> 
-
-                        </View>
-
+                        <Image style={{
+                            width: 70, height: 70
+                        }} source={require('../assets/icon.jpg')}></Image>
                     </View>
+                    <View style={{ flexDirection: "row", alignSelf: "center", marginTop: 30 }}>
+                        <Icon name="facebook" size={35} color="blue"></Icon>
+                        <Text style={{
+                            marginTop: 45,
+                            marginLeft: 10,
+                            fontSize: 20
+                        }}>Or</Text>
+                        <Icon style={{
+                            marginLeft: 10
+                        }} name="mail" size={35} color="red"></Icon>
+                    </View>
+                    <View style={{
+                        alignSelf: "center",
+                        marginTop: 25
+                    }}>
+                        <TextInput style={{
+                            borderWidth: 1, width: 330, borderRadius: 7,
+                            borderColor: "black",
+                            fontWeight: "bold",
+                            fontSize: 20,
+                            paddingLeft: 15
+                        }} placeholder="Enter Email and Number " value={email} onChangeText={(text) => setEmail(text)}></TextInput>
+                        <TextInput style={{
+                            borderWidth: 1, width: 330,
+                            padding: 10,
+                            borderRadius: 7,
+                            marginTop: 10,
+                            borderColor: "black",
+                            fontWeight: "bold",
+                            paddingLeft: 15,
+                            fontSize: 20
+                        }} placeholder="Enter Password " value={password} secureTextEntry onChangeText={(text) => setPassword(text)}></TextInput>
+                        <Text style={{
+                            textAlign: "right",
+                            fontSize: 15,
+                            marginTop: 8,
+                            color: "rgba(45, 142, 254, 1)",
+                            fontWeight: "bold"
+                        }} onPress={() => navigation.navigate('Forget')}>Forgot Password?</Text>
 
-                </ImageBackground>
-            </View>
+                        <TouchableOpacity style={{
+                            width: 330,
+                            backgroundColor: "rgba(31, 31, 31, 1)",
+                            padding: 14,
+                            borderRadius: 5,
+                            marginTop: 14,
+
+                        }} onPress={signin}>
+                            {
+                                load ? <ActivityIndicator size={"large"} /> : <Text style={{
+                                    fontWeight: "500",
+                                    fontSize: 20,
+                                    textAlign: "center",
+                                    color: "#fff",
+                                    fontWeight: "bold"
+                                }} >  Log in </Text>
+                            }
+                        </TouchableOpacity>
+                    </View>
+                </View>
+                <View style={{
+                    marginTop: 60,
+                    alignSelf: "center"
+                }}>
+                    <Text style={{
+                        fontSize: 20
+                    }} onPress={() => navigation.navigate('Signup')}>Don't Have a account? <Text style={{ color: "rgba(45, 142, 254, 1)" }}>Sign up</Text></Text>
+                </View>
+
+            </ScrollView>
+
+
 
         </View>
+
+
+
     )
 }
 
 export default Login;
+
+

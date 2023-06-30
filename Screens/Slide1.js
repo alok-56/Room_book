@@ -5,83 +5,89 @@ const Slide1 = ({ navigation }) => {
     return (
         <View style={{
             flex: 1,
+            backgroundColor: "#fff"
         }}>
-            <ImageBackground style={{
-                height: "100%",
-                weight: "100%",
+            <View style={{
+                flex: 1
+            }}>
 
-            }} source={require('../assets/bac1.png')}>
                 <View style={{
-                    flex: 1,
-                    justifyContent: "center",
-                    alignItems: "center",
-                    marginTop: 30
+                    alignSelf: "center",
                 }}>
-                    <View style={{
-                        flex: 1,
-                        width: "70%",
-                        height: "100%",
-                        alignItems: "center",
-                        marginTop: "1%"
-                    }}>
-                        <Image style={{
-
-                        }} source={require('../assets/house.png')}></Image>
-                    </View>
+                    <Image style={{
+                        height: 250,
+                        width: 400,
+                        marginTop: 50
+                    }} source={require('../assets/slide1.gif')}></Image>
                 </View>
-
                 <View style={{
-                    flex: 1,
-                    flexDirection: "column",
-                    width: "60%",
-                    marginLeft: "45%",
-                    position: "relative",
-                    top: "18%",
-                    right: "5%"
-
+                    alignSelf: "center",
+                    marginTop: 25,
+                    flexDirection: "row",
                 }}>
                     <Text style={{
-                        fontSize: 20,
-                        color: "rgba(12, 0, 88, 1)",
-                        textAlign: "center"
-                    }}>Choose from thousand of 100%
-                        genuine PG homes,Single rooms or a shared one
-                        we have got it all. </Text>
-
+                        width: 10,
+                        height: 10,
+                        backgroundColor: "rgba(248, 89, 53, 1)",
+                        borderRadius: 10
+                    }}></Text>
+                    <Text style={{
+                        width: 10,
+                        height: 10,
+                        backgroundColor: "black",
+                        borderRadius: 10,
+                        marginLeft: 7
+                    }}></Text>
+                    <Text style={{
+                        width: 10,
+                        height: 10,
+                        backgroundColor: "black",
+                        borderRadius: 10,
+                        marginLeft: 7
+                    }}></Text>
                 </View>
-                <View style={{
-                    flexDirection: "row"
+
+            </View>
+
+            <View style={{
+                flex: 0.5,
+                justifyContent: "center",
+                alignItems: "center"
+            }}>
+                <Text style={{
+                    textAlign: "center",
+                    fontSize: 20,
+                    fontWeight: "bold"
                 }}>
-                    <Image source={require('../assets/girl.png')}>
-                    </Image>
+                    BEST AND VERIFIED OWNERS
+                </Text>
+                <Text style={{
+                    width: "90%",
+                    alignSelf: "center",
+                    textAlign: "center",
+                    marginTop: 10,
+                    fontSize: 15
+                }}>
+                    Verified owners in rental PGs have been screened and their properties inspected, ensuring a safe and comfortable living environment. They prioritize tenants' needs and are responsive to any concerns.
+                </Text>
+                <TouchableOpacity onPress={() => navigation.navigate('Slide2')}>
                     <View style={{
-                        justifyContent: "flex-end",
-                        marginBottom: "10%",
+                        alignSelf: "center",
                         position: "relative",
-                        right: "20%"
+                        bottom: 30
                     }}>
-                        <TouchableOpacity style={{
-                            width: 110,
-                            backgroundColor: "rgba(0, 38, 57, 0.49)",
-                            padding: 10,
-                            borderRadius: 40,
-                            shadowColor: '#171717',
-                            shadowOffset: { width: -2, height: 4 },
-                            shadowOpacity: 2,
-                            shadowRadius: 3,
-                            elevation: 60
-
-                        }} onPress={() => navigation.navigate('Slide2')}><Text style={{
-                            textAlign: "center",
-                            fontWeight: "bold",
-                            color: "#fff",
-                            fontSize: 20
-                        }}>Next</Text></TouchableOpacity>
+                        <Image style={{
+                            width: 200,
+                            height: 200
+                        }} source={require('../assets/next.gif')}  ></Image>
                     </View>
-                </View>
+                </TouchableOpacity>
 
 
-            </ImageBackground>
+            </View>
+
+
+
 
         </View>
     )

@@ -1,10 +1,10 @@
 import React from "react";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Wishlist from "../Screens/Wishlist";
 import Roomnav from "./Roomnav";
 import Profilenav from "./Profilenav";
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import Homenav from "./Homenav";
+import Wishlist from "../Screens/Wishlist";
 
 const Tab = createBottomTabNavigator()
 
@@ -13,7 +13,7 @@ const Bottomtab = () => {
         <Tab.Navigator initialRouteName="home"
             screenOptions={{
                 headerShown: false,
-                tabBarActiveTintColor: "aqua",
+                tabBarActiveTintColor: "rgba(248, 89, 53, 1)",
                 tabBarLabelStyle: {
                     marginBottom: 10,
                     fontSize: 13,
@@ -22,14 +22,13 @@ const Bottomtab = () => {
                 tabBarStyle: {
                     height: 80,
                     position: "absolute",
-                    bottom: 5,
-                    left: 10,
-                    width: "95%",
+                    bottom: 0,
+                    width: "100%",
                     borderTopEndRadius: 45,
                     borderTopStartRadius: 45,
                     flexDirection: "row",
                     justifyContent: "center",
-                   
+
                 }
             }}
 
@@ -39,7 +38,7 @@ const Bottomtab = () => {
                 tabBarIcon: ({ focused }) => {
                     return (
                         <Icon style={{
-                            color: focused ? "aqua" : "black"
+                            color: focused ? "rgba(248, 89, 53, 1)" : "black"
                         }} name="home" size={34} color="aqua" />
                     )
                 }
@@ -49,7 +48,7 @@ const Bottomtab = () => {
                 tabBarIcon: ({ focused }) => {
                     return (
                         <Icon style={{
-                            color: focused ? "aqua" : "black"
+                            color: focused ? "rgba(248, 89, 53, 1)" : "black"
                         }} name="room" size={34} color="black" />
                     )
                 }
@@ -59,17 +58,17 @@ const Bottomtab = () => {
                 tabBarIcon: ({ focused }) => {
                     return (
                         <Icon style={{
-                            color: focused ? "aqua" : "black"
+                            color: focused ? "rgba(248, 89, 53, 1)" : "black"
                         }} name="message" size={34} />
                     )
                 }
-            }} name="Complain" component={Wishlist} />
+            }} name="complain" component={Wishlist} />
             <Tab.Screen options={{
                 headerShown: false,
                 tabBarIcon: ({ focused }) => {
                     return (
                         <Icon style={{
-                            color: focused ? "aqua" : "black"
+                            color: focused ? "rgba(248, 89, 53, 1)" : "black"
                         }} name="person" size={34} color="black" />
                     )
                 }

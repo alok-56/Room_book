@@ -19,10 +19,11 @@ const Splashstack = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoad(false)
-    }, 4000)
+    }, 6000)
     const data = AsyncStorage.getItem('users')
     if (data != null) {
       setIslogin(true)
+      console.log(data)
     }
 
   }, [])
@@ -45,11 +46,14 @@ const Splashstack = () => {
       <Stack.Screen name="Login" component={Login} options={{
         headerShown: false
       }} />
-      {
+      {/* {
         islogin ? <Stack.Screen name="Bottom" component={Bottomtab} options={{
           headerShown: false
         }} /> : null
-      }
+      } */}
+      <Stack.Screen name="Bottom" component={Bottomtab} options={{
+        headerShown: false
+      }} />
       <Stack.Screen name="Signup" component={Signup} options={{
         headerShown: false
       }} />

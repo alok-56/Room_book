@@ -1,43 +1,97 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
 
-const Categerios = () => {
+const Topplace = () => {
     return (
         <View style={{
-            width:"95%",justifyContent:"center",
-            alignSelf:"center"
+            flex: 1,
+            marginTop: 10
         }}>
-            <Text style={{ fontSize: 13, marginLeft: 10, marginTop: 20, fontWeight: "800", color: "black" }}>Find a Pg Away from your Home</Text>
-
-            <View style={{  flexDirection: "row",padding:8,borderRadius:10, marginTop: 10, justifyContent: "space-around",backgroundColor:"#fff",elevation:30 }}>
-                <View style={{ height: 145, width: 120, borderWidth: 1, marginLeft: 5, borderRadius: 5 }}>
-                    <Image source={require('../assets/cat1.png')} style={{ height: 100, width: 118, borderRadius: 5 }}></Image>
-                    <View style={{marginTop:5}} >
-                        <Text style={{ fontSize: 10,textAlign:"center" }}>Studnts Friendly PG</Text>
-                        <Text style={{ fontSize: 10, textAlign: "center", color: "red", fontWeight: "800" }}>Exlpore</Text>
-                    </View>
+            <View style={{ width: "85%", height: 5, alignSelf: "center", backgroundColor: "red", borderRadius: 10 }}>
+            </View>
+            <Text style={{
+                marginTop: 10,
+                fontSize: 20,
+                fontWeight: "bold",
+                marginLeft: 10
+            }}>Top places at your location</Text>
+            <View style={{
+                backgroundColor:"#fff",
+                elevation:20,
+                width:"95%",
+                alignSelf:"center",
+                borderRadius:8,
+                padding:5,
+                marginTop:10
+            }}>
+            <View style={{
+                flexDirection: "row",
+                justifyContent: "space-around",
+            }}>
+                <View style={{ marginTop: 10 }}>
+                    <Image style={{
+                        borderRadius: 50,
+                        height: 80, width: 80,
+                        alignSelf:"center"
+                    }} source={require('../assets/surya.jpg')}></Image>
+                    <Text style={{ textAlign: "center", fontWeight: "bold", fontSize: 15 }}>Surya mall</Text>
                 </View>
-                <View style={{ height: 145, width: 120, borderWidth: 1, marginLeft: 5, borderRadius: 5 }}>
-                    <Image source={require('../assets/cat2.png')} style={{ height: 100, width: 117, borderRadius: 5 }}></Image>
-                    <View style={{marginTop:5}} >
-                        <Text style={{ fontSize: 12, textAlign: "center" }}>PG for Boys</Text>
-                        <Text style={{ fontSize: 10, textAlign: "center", color: "red", fontWeight: "800" }}>Exlpore</Text>
-                    </View>
-                </View>
-                <View style={{ height: 145, width: 120, borderWidth: 1, marginLeft: 5, borderRadius: 5 }}>
-                    <Image source={require('../assets/cat3.png')} style={{ height: 100, width: 118, marginTop: -1, borderRadius: 5 }}></Image>
-                    <View style={{marginTop:5}} >
-                        <Text style={{ fontSize: 12, textAlign: "center" }}> PG for Girls</Text>
-                        <Text style={{ fontSize: 10, textAlign: "center", color: "red", fontWeight: "800" }}>Exlpore</Text>
-                    </View>
+                <View style={{ marginTop: 10 }}>
+                    <Image style={{
+                        borderRadius: 50,
+                        height: 80, width: 80,
+                        alignSelf:"center"
+                    }} source={require('../assets/awanti.jpg')}></Image>
+                    <Text style={{ textAlign: "center", fontWeight: "bold", fontSize: 15 }}>Awanti</Text>
                 </View>
 
+                <View style={{ marginTop: 10 }}>
+                    <Image style={{
+                        borderRadius: 50,
+                        height: 80, width: 80,
+                        alignSelf:"center"
+                    }} source={require('../assets/shanti.jpg')}></Image>
+                    <Text style={{ textAlign: "center", fontWeight: "bold", fontSize: 15 }}>Shanti nagar</Text>
+                </View>
+            </View>
 
 
+            <View style={{
+                flexDirection: "row",
+                justifyContent: "space-around",
+                marginTop: 5,
+            }}>
+                <View style={{ marginTop: 10 }}>
+                    <Image style={{
+                        borderRadius: 50,
+                        height: 80, width: 80
+                    }} source={require('../assets/shra.jpg')}></Image>
+                    <Text style={{ textAlign: "center", fontWeight: "bold", fontSize: 15 }}>SSTC</Text>
+                </View>
+                <View style={{ marginTop: 10 }}>
+                    <Image style={{
+                        borderRadius: 50,
+                        height: 80, width: 80
+                    }} source={require('../assets/puri.jpg')}></Image>
+                    <Text style={{ textAlign: "center", fontWeight: "bold", fontSize: 15 }}>Puri Iti</Text>
+                </View>
+
+                <View style={{ marginTop: 10 }}>
+                    <Image style={{
+                        borderRadius: 50,
+                        height: 80, width: 80
+                    }} source={require('../assets/rungta.jpg')}></Image>
+                    <Text style={{ textAlign: "center", fontWeight: "bold", fontSize: 15 }}>RCET</Text>
+                </View>
+            </View>
+                
+            </View>
+            
+            <View style={{ width: "85%", height: 5, alignSelf: "center", backgroundColor: "red", borderRadius: 10, marginTop: 15 }}>
             </View>
 
         </View>
     )
 }
 
-export default Categerios;
+export default Topplace;
